@@ -40,6 +40,7 @@ class Entity
 
     void update(float deltaTime, Entity *collidables, int collidableCount);
     void render() const;
+    void renderTexture(Texture2D texture, int frame, int frameCount) const;
     bool isTouching(const Entity *other) const
     {
         return isColliding(other);

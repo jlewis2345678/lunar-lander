@@ -117,10 +117,19 @@ void Entity::render() const
     if (!mIsActive)
         return;
 
+    renderTexture(mTexture, 0, 1);
+}
+
+void Entity::renderTexture(Texture2D texture, int frame, int frameCount) const
+{
+    if (!mIsActive || frameCount <= 0)
+        return;
+
     Rectangle destination{mPosition.x, mPosition.y, mScale.x, mScale.y};
     Vector2 origin{mScale.x / 2.0f, mScale.y / 2.0f};
-    Rectangle source{0.0f, 0.0f, static_cast<float>(mTexture.width),
-        static_cast<float>(mTexture.height)};
+    float frameWidth = static_cast<float>(texture.width) / frameCount;
+    Rectangle source{frameWidth * frame, 0.0f, frameWidth,
+        static_cast<float>(texture.height)};
 
-    DrawTexturePro(mTexture, source, destination, origin, mAngle, WHITE);
+    DrawTexturePro(texture, source, destination, origin, mAngle, WHITE);
 }
