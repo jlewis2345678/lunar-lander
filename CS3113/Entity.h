@@ -40,6 +40,10 @@ class Entity
 
     void update(float deltaTime, Entity *collidables, int collidableCount);
     void render() const;
+    bool isTouching(const Entity *other) const
+    {
+        return isColliding(other);
+    }
 
     Vector2 getPosition() const
     {

@@ -36,7 +36,7 @@ bool Entity::isColliding(const Entity *other) const
         std::fabs(mPosition.y - other->mPosition.y) -
         (mColliderDimensions.y + other->mColliderDimensions.y) / 2.0f;
 
-    return xDistance < 0.0f && yDistance < 0.0f;
+    return xDistance <= 0.0f && yDistance <= 0.0f;
 }
 
 void Entity::resolveVerticalCollisions(Entity *collidables, int collidableCount)
