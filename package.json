@@ -1,0 +1,11 @@
+{
+  "name": "lunar-lander",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write \"**/*.{md,json,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{md,json,yml,yaml}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.9.10"
+  }
+}

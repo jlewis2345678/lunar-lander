@@ -1,0 +1,7 @@
+# Prettier does not support C++.
+**/*.cpp
+**/*.h
+
+# Binary assets and generated build output.
+assets/
+raylib_app
